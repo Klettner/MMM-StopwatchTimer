@@ -1,4 +1,6 @@
-Module.register("MMM-TimeStopp", {
+/* Some code snippets of this file were copied from the default alert module https://github.com/MichMich/MagicMirror/tree/development/modules/default/alert */
+
+Module.register("MMM-StopwatchTimer", {
 defaults: {
 	animation: true
 },
@@ -14,48 +16,48 @@ start: function() {
 
 notificationReceived: function(notification, payload, sender) {
   switch(notification) {
-    case "START_COUNTER":
+    case "START_TIMER":
 		this.minutes = Math.floor(payload / 60);
 		this.seconds = (payload % 60);
-		this.initialiseTimeStopp(true);
+		this.initialiseStopwatchTimer(true);
 		break
-	case "INTERRUPT_TIMESTOPP":
+	case "INTERRUPT_STOPWATCHTIMER":
 		this.minutes = -1;
 		this.seconds = -1;
-		clearInterval(this.timeStopp);
+		clearInterval(this.stopwatchTimer);
 		this.removeOverlay();
 	  	break
-	case "PAUSE_TIMESTOPP":
-		clearInterval(this.timeStopp);
+	case "PAUSE_STOPWATCHTIMER":
+		clearInterval(this.stopwatchTimer);
 		break
-	case "UNPAUSE_COUNTER":
+	case "UNPAUSE_TIMER":
 		if(this.minutes > -1 && this.seconds > -1) {
-			this.initialiseTimeStopp(true);
+			this.initialiseStopwatchTimer(true);
 		}
 		break
-	case "START_STOPPER":
+	case "START_STOPWATCH":
 		this.minutes = 0;
 		this.seconds = 0;
-		this.initialiseTimeStopp(false);
+		this.initialiseStopwatchTimer(false);
 		break
-	case "UNPAUSE_STOPPER":
+	case "UNPAUSE_STOPWATCH":
 		if(this.minutes > -1 && this.seconds > -1) {
-			this.initialiseTimeStopp(false);
+			this.initialiseStopwatchTimer(false);
 		}
   }
 },
 
-initialiseTimeStopp: function(isCounter){
-	clearInterval(this.timeStopp);
+initialiseStopwatchTimer: function(isCounter){
+	clearInterval(this.stopwatchTimer);
 	if(this.isVisible) {
     	this.removeOverlay();
     }
     this.createOverlay();
-    this.timeStopp = setInterval(()=>{
+    this.stopwatchTimer = setInterval(()=>{
 	if(isCounter) {
-	  	this.createCounter()
+	  	this.createTimer()
 	} else {
-		this.createStopper()
+		this.createStopwatch()
 	}
   	}, 1000)
 },
@@ -98,7 +100,7 @@ displayMessageNoPopup: function(message) {
   }
 },
 
-createCounter: function() {
+createTimer: function() {
 		if(this.minutes == 0 && this.seconds == 0){
 			this.decreaseTime();
 			this.displayMessageNoPopup('Done');
@@ -124,7 +126,7 @@ createCounter: function() {
 		}
 },
 
-createStopper: function() {
+createStopwatch: function() {
 	if(this.config.animation) {
 		if(this.seconds < 10) {
 			this.displayMessagePopup(this.minutes + ':0' + this.seconds);
