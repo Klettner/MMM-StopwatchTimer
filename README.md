@@ -1,6 +1,8 @@
 # Module: StopwatchTimer :hourglass_flowing_sand:
 With this MagicMirror module you can display an alert-style timer or stopwatch on your mirror. The timer and stopwatch can be controlled via notifications or by using the [MM-Remote android app](https://github.com/Klettner/MM-Remote) :iphone:.  
 
+![](Timer.gif)
+
 ## Dependencies ##
 This module does not have any special dependencies.
 
