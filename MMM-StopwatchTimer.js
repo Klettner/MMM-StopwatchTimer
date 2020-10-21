@@ -81,7 +81,7 @@ removeOverlay: function() {
 
 displayMessagePopup: function(message) {
   let strinner = '<div class="ns-box-inner">';
-  strinner += "<span class='thin dimmed medium'>" + message + "</span>";
+  strinner += "<span class='regular normal medium'>" + message + "</span>";
   strinner += "</div>";
   this.ntf.innerHTML = strinner;
   this.ntf.className = "ns-alert ns-growl ns-effect-jelly ns-type-notice ns-show"
@@ -90,7 +90,7 @@ displayMessagePopup: function(message) {
 
 displayMessageNoPopup: function(message) {
   let strinner = '<div class="ns-box-inner">';
-  strinner += "<span class='thin dimmed medium'>" + message + "</span>";
+  strinner += "<span class='regular normal medium'>" + message + "</span>";
   strinner += "</div>";
   this.ntf.innerHTML = strinner;
   if(this.firstMessage) {
