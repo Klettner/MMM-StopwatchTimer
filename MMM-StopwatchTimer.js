@@ -2,7 +2,9 @@
 
 Module.register("MMM-StopwatchTimer", {
 defaults: {
-	animation: true
+	animation: true,
+	sound: true,
+	soundFile: 'buzz.wav'
 },
 
 getStyles: function() {
@@ -103,6 +105,9 @@ displayMessageNoPopup: function(message) {
 createTimer: function() {
 		if(this.minutes == 0 && this.seconds == 0){
 			this.decreaseTime();
+			if(this.config.sound) {
+				this.sendNotification('PLAY_SOUND', this.config.soundFile);
+			}
 			this.displayMessageNoPopup('Done');
 			setTimeout(() => {
 				this.removeOverlay()
