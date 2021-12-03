@@ -4,7 +4,8 @@ Module.register("MMM-StopwatchTimer", {
 defaults: {
 	animation: true,
 	sound: true,
-	soundFile: 'buzz.wav'
+	soundFile: 'buzz.wav',
+	useNativeSound: false
 },
 
 getStyles: function() {
@@ -14,6 +15,9 @@ getStyles: function() {
 start: function() {
 	this.isVisible = false;
 	this.firstMessage = true;
+	// initialize native sound vith HTML5
+	this.sound = new Audio();
+	this.sound.autoplay = true;
 },
 
 notificationReceived: function(notification, payload, sender) {
@@ -106,7 +110,9 @@ createTimer: function() {
 		if(this.minutes == 0 && this.seconds == 0){
 			this.decreaseTime();
 			if(this.config.sound) {
-				this.sendNotification('PLAY_SOUND', this.config.soundFile);
+				// use native sound (with sound inside sounds directory) or original code ?
+				if (this.config.useNativeSound) this.sound.src= "/modules/MMM-StopwatchTimer/sounds/" + this.config.soundFile + "?seed=" + Date.now();
+				else this.sendNotification('PLAY_SOUND', this.config.soundFile);
 			}
 			this.displayMessageNoPopup('Done');
 			setTimeout(() => {
