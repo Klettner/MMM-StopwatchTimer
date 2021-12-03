@@ -8,7 +8,7 @@ defaults: {
 },
 
 getStyles: function() {
-	return ["notificationFX.css", "font-awesome.css"];
+	return ["MMM-StopwatchTimer.css", "font-awesome.css"];
 },
 
 start: function() {
