@@ -4,7 +4,7 @@ With this MagicMirror module you can display an alert-style timer or stopwatch o
 ![](Timer.gif)
 
 ## Dependencies ##
-This module does not have any special dependencies.
+* For using sound, the native implementation without external dependencies (thanks @bugsounet) or [MMM-Sounds](https://github.com/jc21/MMM-Sounds) (needs to be set up separately) can be used 
 
 ## Set-up ##
 This module can be downloaded by using Git. First make sure that you have installed Git on your system. 
@@ -29,6 +29,9 @@ modules: [
     module: 'MMM-StopwatchTimer',
     config: {
       animation: true,
+      sound: true,
+      soundFile: 'buzz.wav', // This file must be in the sounds folder of MMM-StopwatchTimer or MMM-Sounds (depending on useNativeSound)
+      useNativeSound: true
     },
   },
 ];
@@ -49,5 +52,7 @@ The following options can be configured in the config.js file:
 | **Option** | **Description**|
 |------------|----------------|
 | ``` animation ``` | Controls if the timer/stopwatch should be animated. **Default:** *true* |
-
+| ``` sound ``` | Controls if a sound should be played when the timer is done. **Default:** *true* |
+| ``` soundFile ``` | Specifies the file that should be used to play sound **Default:** *'buzz.wav'* |
+| ``` useNativeSound ``` | Specifies if the sound should be played natively (thanks @bugsounet) or via [MMM-Sounds](https://github.com/jc21/MMM-Sounds) (MMM-Sounds needs to be set up independently). **Default:** *false* |
 
