@@ -31,7 +31,8 @@ modules: [
       animation: true,
       sound: true,
       soundFile: 'buzz.wav', // This file must be in the sounds folder of MMM-StopwatchTimer or MMM-Sounds (depending on useNativeSound)
-      useNativeSound: true
+      useNativeSound: true,
+      useAlertStyle: true
     },
   },
 ];
@@ -55,4 +56,5 @@ The following options can be configured in the config.js file:
 | ``` sound ``` | Controls if a sound should be played when the timer is done. **Default:** *true* |
 | ``` soundFile ``` | Specifies the file that should be used to play sound **Default:** *'buzz.wav'* |
 | ``` useNativeSound ``` | Specifies if the sound should be played natively (thanks @bugsounet) or via [MMM-Sounds](https://github.com/jc21/MMM-Sounds) (MMM-Sounds needs to be set up independently). **Default:** *false* |
+| ``` useAlertStyle ``` | Specifies if you want to use `alert` style or popup bar with timer **Default:** *true* |
 
