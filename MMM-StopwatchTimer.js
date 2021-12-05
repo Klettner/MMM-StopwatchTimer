@@ -98,7 +98,7 @@ Module.register("MMM-StopwatchTimer", {
       this.createOverlay()
     }
     this.stopwatchTimer = setInterval(()=>{
-      console.log("Timer Values:", this.Timer)
+      // console.log("Timer Values:", this.Timer)
       if(isCounter) this.createTimer()
       else this.createStopwatch()
     }, 1000)
