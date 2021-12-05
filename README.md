@@ -3,6 +3,8 @@ With this MagicMirror module you can display an alert-style timer or stopwatch o
 
 ![](Timer.gif)
 
+![](popup_screen.png)
+
 ## Dependencies ##
 * For using sound, the native implementation without external dependencies (thanks @bugsounet) or [MMM-Sounds](https://github.com/jc21/MMM-Sounds) (needs to be set up separately) can be used 
 
