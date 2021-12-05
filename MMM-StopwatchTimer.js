@@ -6,7 +6,7 @@ Module.register("MMM-StopwatchTimer", {
     sound: true,
     soundFile: 'buzz.wav',
     useNativeSound: false,
-    useAlertStyle: false
+    useAlertStyle: true
   },
 
   getStyles: function() {
