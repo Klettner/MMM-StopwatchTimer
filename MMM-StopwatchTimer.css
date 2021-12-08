@@ -272,3 +272,42 @@
   }
 }
 
+/* popup display */
+#StopwatchTimer {
+  top: calc(80% - 20px);
+  left: calc(50% - 200px);
+  width:400px;
+  height:40px;
+  background-color:#333;
+  position:fixed;
+  visibility:visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+#StopwatchTimer_TEXT {
+  position:absolute;
+  width:400px;
+  height:40px;
+  top:0;
+  left:0;
+  color:#FFF;
+  text-align:center;
+  font-size:24px;
+  line-height:40px;
+  z-index:9998;
+}
+
+#StopwatchTimer_BAR {
+  position:absolute;
+  width:400px;
+  height:40px;
+  top:0;
+  left:0;
+  z-index:9999;
+  background-color: rgba(70,100,200, 0.5);
+}
+
+#StopwatchTimer.hidden {
+  display:none;
+}

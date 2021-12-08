@@ -1,0 +1,24 @@
+{
+  "name": "MMM-StopwatchTimer",
+  "version": "1.1.0",
+  "description": "An embedded Timer Displayer for MagicMirror.",
+  "main": "MMM-StopwatchTimer.js",
+  "keywords": [
+    "magic mirror",
+    "module",
+    "timer"
+  ],
+  "author": [
+    "Klettner",
+    "bugsounet"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Klettner/MMM-StopwatchTimer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Klettner/MMM-StopwatchTimer"
+  },
+  "homepage": "https://github.com/Klettner/MMM-StopwatchTimer/issues"
+}
